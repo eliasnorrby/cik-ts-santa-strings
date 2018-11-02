@@ -5,7 +5,7 @@ module.exports = function(wallaby) {
     files: [
       'src/**/*.ts',
       '!src/**/*Test.ts',
-      '!src/**/*input.ts'
+      { pattern: 'src/**/*input.ts', instrument: false }
     ],
     tests: [
       'test/**/*Test.ts',

@@ -9,11 +9,25 @@ export class Santa {
     }
 
     determineNiceness(string: string): boolean {
-        throw new Error("Method not implemented.");
+        let stringIsNice = true;
+
+        this.criteria.forEach(c => {
+            stringIsNice = stringIsNice ? c.check(string) : false;
+        })
+
+        return stringIsNice;
     }
     
     countNiceStrings(strings: string[]): number {
-        throw new Error("Method not implemented.");
+        let count = 0;
+
+        strings.forEach(s => {
+            if (this.determineNiceness(s)) {
+                count++;
+            }
+        })
+
+        return count;
     }
 
 }

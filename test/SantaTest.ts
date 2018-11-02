@@ -1,4 +1,8 @@
 import { Santa } from "../src/Santa";
+import { CriterionVowel } from "../src/CriterionVowel";
+import { CriterionDoubleLetter } from "../src/CriterionDoubleLetter";
+import { CriterionForbiddenSubstring } from "../src/CriterionForbiddenSubstring";
+import { listOfStrings } from "../src/input";
 
 describe('Santa', () => {
     let santa: Santa;
@@ -15,10 +19,15 @@ describe('Santa', () => {
     ];
 
     beforeEach(() => {
-        santa = new Santa([]);
+        let criteria = [
+            new CriterionVowel(),
+            new CriterionDoubleLetter(),
+            new CriterionForbiddenSubstring()
+        ]
+        santa = new Santa(criteria);
     })
 
-    xdescribe('santa.determineNiceness', () => {
+    describe('santa.determineNiceness', () => {
 
         it('should return true for nice string', () => {
             expect(santa.determineNiceness('ugknbfddgicrmopn')).toBeTruthy();
@@ -41,7 +50,7 @@ describe('Santa', () => {
         })
     })
 
-    xdescribe('santa.countNiceStrings', () => {
+    describe('santa.countNiceStrings', () => {
 
         it('should return the proper count', () => {
             let strings1 = ["aaa"];
@@ -49,6 +58,11 @@ describe('Santa', () => {
 
             expect(santa.countNiceStrings(strings1)).toBe(1);
             expect(santa.countNiceStrings(strings2)).toBe(2);
+        })
+
+        it('should log the number of nice strings in input', () => {
+            let nNiceStrings = santa.countNiceStrings(listOfStrings)
+            console.log(`\nThe input contains ${nNiceStrings} nice strings.\n`);
         })
     })
     
