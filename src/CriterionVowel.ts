@@ -2,8 +2,23 @@ import { ICriterion } from "./ICriterion";
 
 export class CriterionVowel implements ICriterion {
     
+    // vowels = [
+    //     "a",
+    //     "e",
+    //     "i",
+    //     "o",
+    //     "u"
+    // ] 
+    vowels = "aeiou";
+
     check(string: string): boolean {
-        throw new Error("Method not implemented.");
+        let vowelCount = 0;
+        string.split('').forEach(char => {
+            if(this.vowels.includes(char)) {
+                vowelCount++;
+            }
+        })
+        return vowelCount >= 3;
     }
 
 }
