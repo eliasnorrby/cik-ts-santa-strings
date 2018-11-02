@@ -1,0 +1,26 @@
+{
+  "name": "santa-strings",
+  "version": "1.0.0",
+  "description": "Santa tries to distinguish bad strings from nice ones",
+  "main": "wallaby.js",
+  "repository": {
+    "type" : "git",
+    "url" : "https://eliasnorrby@bitbucket.org/eliasnorrby/santa-strings.git"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "ts-node node_modules/jasmine/bin/jasmine \"test/**/*Test.ts\""
+  },
+  "author": "eliasnorrby",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jasmine": "^2.8.9",
+    "jasmine": "^3.3.0",
+    "ts-node": "^7.0.1"
+  },
+  "dependencies": {
+    "typescript": "^3.1.1"
+  }
+}
