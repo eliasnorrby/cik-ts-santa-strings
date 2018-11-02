@@ -12,7 +12,7 @@ export class CriterionForbiddenSubstring implements ICriterion {
     check(string: string): boolean {
         let includesForbiddenString = false;
         this.forbiddenSubstrings.forEach(fs => {
-            includesForbiddenString = string.includes(fs);
+            includesForbiddenString = includesForbiddenString ? true : string.includes(fs);
         })
         return !includesForbiddenString;
     }

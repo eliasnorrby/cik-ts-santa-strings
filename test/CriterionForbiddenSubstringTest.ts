@@ -6,6 +6,7 @@ describe('CriterionForbiddenSubstring', () => {
     let ns1 = "aaaa";
 
     let bs1 = "aaaxyaaa";
+    let bs2 = "ababab";
 
     let ws1 = "";
 
@@ -19,6 +20,7 @@ describe('CriterionForbiddenSubstring', () => {
 
     it('should return false for bad strings', () => {
         expect(c.check(bs1)).toBeFalsy();
+        expect(c.check(bs2)).toBeFalsy();
     })
 
     it('should return true for weird strings', () => {
