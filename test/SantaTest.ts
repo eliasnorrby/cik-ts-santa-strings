@@ -65,6 +65,4 @@ describe('Santa', () => {
             console.log(`\nThe input contains ${nNiceStrings} nice strings.\n`);
         })
     })
-    
-
 })
