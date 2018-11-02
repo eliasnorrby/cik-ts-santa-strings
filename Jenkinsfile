@@ -1,11 +1,11 @@
 // Template Jenkinsfile for CI of TypeScript based exercises
 node {
-    slackSend message: "=== === === New build started === === ==="
+    //slackSend message: "=== === === New build started === === ==="
     def display_name = "${JOB_NAME}-${BUILD_NUMBER}"
     display_name = display_name.replace("%2F", "-")
     slackSend color: 'good', message: "${display_name} : Build Started"
     stage('Checkout') {
-        slackSend color: 'good', message: "${display_name} : Checking out source code"
+        //slackSend color: 'good', message: "${display_name} : Checking out source code"
         checkout scm
     }
 
@@ -33,5 +33,5 @@ node {
     } else {
         slackSend color: 'danger', message: "${display_name} : Build FAILURE"
     }
-    slackSend message: "=== === === Build finished === === ==="
+    //slackSend message: "=== === === Build finished === === ==="
 }
