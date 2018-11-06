@@ -2,14 +2,14 @@ import { ICriterion } from "./ICriterion";
 
 export class CriterionVowel implements ICriterion {
     
-    // vowels = [
-    //     "a",
-    //     "e",
-    //     "i",
-    //     "o",
-    //     "u"
-    // ] 
-    vowels = "aeiou";
+    vowels = [
+        "a",
+        "e",
+        "i",
+        "o",
+        "u"
+    ] 
+    // vowels = "aeiou";
 
     check(string: string): boolean {
         let vowelCount = 0;
