@@ -65,4 +65,23 @@ describe('Santa', () => {
             console.log(`\nThe input contains ${nNiceStrings} nice strings.\n`);
         })
     })
+
+    describe('should give different results with new configs', () => {
+        let newSanta: Santa;
+        
+        beforeEach(() => {
+            let newCriteria = [
+                new CriterionVowel(["a", "u"]),
+                new CriterionDoubleLetter(),
+                new CriterionForbiddenSubstring(["xy"])
+            ]
+            newSanta = new Santa(newCriteria);
+        })
+
+        it('should give another result for new rules', () => {
+            let nNiceStrings = newSanta.countNiceStrings(listOfStrings)
+            console.log(`\nThe input contains ${nNiceStrings} nice strings.\n`);
+            expect(nNiceStrings != 238).toBeTruthy();
+        })
+    })
 })
