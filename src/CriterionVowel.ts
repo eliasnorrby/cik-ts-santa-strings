@@ -9,7 +9,12 @@ export class CriterionVowel implements ICriterion {
         "o",
         "u"
     ] 
-    // vowels = "aeiou";
+
+    constructor(vowels?: string[]) {
+        if (vowels) {
+            this.vowels = vowels;
+        }
+    }
 
     check(string: string): boolean {
         let vowelCount = 0;
