@@ -1,6 +1,8 @@
 import { ICriterion } from "./ICriterion";
 
 export class CriterionVowel implements ICriterion {
+
+    requiredCount = 3;
     
     vowels = [
         "a",
@@ -10,9 +12,12 @@ export class CriterionVowel implements ICriterion {
         "u"
     ] 
 
-    constructor(vowels?: string[]) {
-        if (vowels) {
+    constructor(vowels?: string[], count?: number) {
+        if (vowels && vowels.length > 0) {
             this.vowels = vowels;
+        }
+        if (count) {
+            this.requiredCount = count;
         }
     }
 
@@ -25,7 +30,7 @@ export class CriterionVowel implements ICriterion {
             }
         })
         
-        return vowelCount >= 3;
+        return vowelCount >= this.requiredCount;
     }
 
 }

@@ -28,5 +28,10 @@ describe('CriterionVowel', () => {
         c = new CriterionVowel(["a", "e", "i"]);
         expect(c.check(ns1)).toBeFalsy();
         expect(c.check(ns2)).toBeTruthy();
+        
+        c = new CriterionVowel();
+        c.requiredCount = 5;
+        expect(c.check(ns1)).toBeFalsy();
+        expect(c.check(ns2)).toBeTruthy();
     })
 })
