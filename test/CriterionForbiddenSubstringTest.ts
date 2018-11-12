@@ -7,6 +7,7 @@ describe('CriterionForbiddenSubstring', () => {
 
     let bs1 = "aaaxyaaa";
     let bs2 = "ababab";
+    let bs3 = "adkjcdkl";
 
     let ws1 = "";
 
@@ -21,9 +22,16 @@ describe('CriterionForbiddenSubstring', () => {
     it('should return false for bad strings', () => {
         expect(c.check(bs1)).toBeFalsy();
         expect(c.check(bs2)).toBeFalsy();
+        expect(c.check(bs3)).toBeFalsy();
     })
 
     it('should return true for weird strings', () => {
         expect(c.check(ws1)).toBeTruthy();
+    })
+
+    it('should support custom configurations', () => {
+        c = new CriterionForbiddenSubstring(["ab", "pq", "xy"]);
+        expect(c.check(bs1)).toBeFalsy();
+        expect(c.check(bs3)).toBeTruthy();
     })
 })

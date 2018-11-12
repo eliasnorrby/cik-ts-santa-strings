@@ -9,6 +9,11 @@ export class CriterionForbiddenSubstring implements ICriterion {
         "xy"
     ]
 
+    constructor(strings?: string[]) {
+        if(strings) {
+            this.forbiddenSubstrings = strings;
+        }
+    }
     check(string: string): boolean {
         let includesForbiddenString = false;
 

@@ -5,7 +5,7 @@ describe('CriterionVowel', () => {
     let c: CriterionVowel;
 
     let ns1 = "aao";
-    let ns2 = "hdjjshgkaou";
+    let ns2 = "hdjjshgkaouie";
     let ns3 = "hjdjajfkdjfoldkdjfkjdfo";
 
     beforeEach(() => {
@@ -22,5 +22,16 @@ describe('CriterionVowel', () => {
 
     it('should return true for long nice string with vowels separated', () => {
         expect(c.check(ns3)).toBeTruthy();
+    })
+
+    it('should support custom configurations', () => {
+        c = new CriterionVowel(["a", "e", "i"]);
+        expect(c.check(ns1)).toBeFalsy();
+        expect(c.check(ns2)).toBeTruthy();
+        
+        c = new CriterionVowel();
+        c.requiredCount = 5;
+        expect(c.check(ns1)).toBeFalsy();
+        expect(c.check(ns2)).toBeTruthy();
     })
 })
