@@ -4,8 +4,8 @@
   "description": "Santa tries to distinguish bad strings from nice ones",
   "main": "wallaby.js",
   "repository": {
-    "type" : "git",
-    "url" : "https://eliasnorrby@bitbucket.org/eliasnorrby/santa-strings.git"
+    "type": "git",
+    "url": "https://github.com/en-dev/cik-ts-santa-strings.git"
   },
   "directories": {
     "test": "test"
