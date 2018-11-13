@@ -104,14 +104,36 @@ describe('Santa', () => {
 
         beforeEach(() => {
             let newCriteria = [
-                new CriterionVowel(),
-                new CriterionDoubleLetter(),
-                new CriterionForbiddenSubstring(),
+                // new CriterionVowel(),
+                // new CriterionDoubleLetter(),
+                // new CriterionForbiddenSubstring(),
                 new CriterionDoublePair(),
                 new CriterionDoubleSeparatedByOne()
             ]
             
             newSanta = new Santa(newCriteria);
+        })
+
+        let ns = [
+            "qjhvhtzxzqqjkmpb",
+            "xxyxx"
+        ]
+
+        let bs = [
+            "uurcxstgmygtbstg",
+            "ieodomkazucvgmuy"
+        ]
+
+        it('should return true for new nice strings', () => {
+            ns.forEach(s => {
+                expect(newSanta.determineNiceness(s)).toBeTruthy();
+            })
+        })
+
+        it('should return false for new nice strings', () => {
+            bs.forEach(s => {
+                expect(newSanta.determineNiceness(s)).toBeFalsy();
+            })
         })
 
         it('should count strings in input', () => {
