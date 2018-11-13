@@ -14,6 +14,10 @@ describe('CriterionDoublePair', () => {
         "ieodomkazucvgmuy"
     ]
 
+    let ws = [
+        "zztdcqzqddaazdjp"
+    ]
+
     beforeEach(() => {
         c = new CriterionDoublePair();
     })
@@ -33,6 +37,12 @@ describe('CriterionDoublePair', () => {
     })
     
     bs.forEach(s => {
+        it("should return false for ${s}", () => {
+            expect(c.check(s)).toBeFalsy();
+        })
+    })
+
+    ws.forEach(s => {
         it("should return false for ${s}", () => {
             expect(c.check(s)).toBeFalsy();
         })
