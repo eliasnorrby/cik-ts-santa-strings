@@ -3,6 +3,8 @@ import { CriterionVowel } from "../src/CriterionVowel";
 import { CriterionDoubleLetter } from "../src/CriterionDoubleLetter";
 import { CriterionForbiddenSubstring } from "../src/CriterionForbiddenSubstring";
 import { listOfStrings } from "../src/input";
+import { CriterionDoublePair } from "../src/CriterionDoublePair";
+import { CriterionDoubleSeparatedByOne } from "../src/CriterionDoubleSeparatedByOne";
 
 describe('Santa', () => {
     let santa: Santa;
@@ -62,7 +64,7 @@ describe('Santa', () => {
 
         it('should log the number of nice strings in input', () => {
             let nNiceStrings = santa.countNiceStrings(listOfStrings)
-            console.log(`\nThe input contains ${nNiceStrings} nice strings.\n`);
+            console.log(`\nThe input contains ${nNiceStrings} nice strings (Part 1).\n`);
         })
     })
 
@@ -80,7 +82,7 @@ describe('Santa', () => {
 
         it('should give another result for new rules', () => {
             let nNiceStrings = newSanta.countNiceStrings(listOfStrings)
-            console.log(`\nThe input contains ${nNiceStrings} nice strings.\n`);
+            console.log(`\nThe input contains ${nNiceStrings} nice strings (arbitrary rules).\n`);
             expect(nNiceStrings != 238).toBeTruthy();
         })
 
@@ -93,7 +95,28 @@ describe('Santa', () => {
             
             newSanta.criteria = arbitraryCriteria;
             let nNiceStrings = newSanta.countNiceStrings(listOfStrings)
-            console.log(`\nThe input contains ${nNiceStrings} nice strings.\n`);
+            console.log(`\nThe input contains ${nNiceStrings} nice strings (arbitrary rules).\n`);
+        })
+    })
+
+    describe('it should count the strings in part two correctly', () => {
+        let newSanta: Santa;
+
+        beforeEach(() => {
+            let newCriteria = [
+                new CriterionVowel(),
+                new CriterionDoubleLetter(),
+                new CriterionForbiddenSubstring(),
+                new CriterionDoublePair(),
+                new CriterionDoubleSeparatedByOne()
+            ]
+            
+            newSanta = new Santa(newCriteria);
+        })
+
+        it('should count strings in input', () => {
+            let nNiceStrings = newSanta.countNiceStrings(listOfStrings)
+            console.log(`\nThe input contains ${nNiceStrings} nice strings (Part 2).\n`);
         })
     })
 })
