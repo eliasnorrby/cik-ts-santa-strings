@@ -14,7 +14,9 @@ export class Santa {
         this.criteria.forEach(c => {
             stringIsNice = stringIsNice ? c.check(string) : false;
         })
-
+        if(stringIsNice) {
+            console.log(string)
+        }
         return stringIsNice;
     }
     
