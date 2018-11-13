@@ -64,7 +64,7 @@ describe('Santa', () => {
 
         it('should log the number of nice strings in input', () => {
             let nNiceStrings = santa.countNiceStrings(listOfStrings)
-            console.log(`\nThe input contains ${nNiceStrings} nice strings.\n`);
+            console.log(`\nThe input contains ${nNiceStrings} nice strings (Part 1).\n`);
         })
     })
 
@@ -82,7 +82,7 @@ describe('Santa', () => {
 
         it('should give another result for new rules', () => {
             let nNiceStrings = newSanta.countNiceStrings(listOfStrings)
-            console.log(`\nThe input contains ${nNiceStrings} nice strings.\n`);
+            console.log(`\nThe input contains ${nNiceStrings} nice strings (arbitrary rules).\n`);
             expect(nNiceStrings != 238).toBeTruthy();
         })
 
@@ -95,7 +95,7 @@ describe('Santa', () => {
             
             newSanta.criteria = arbitraryCriteria;
             let nNiceStrings = newSanta.countNiceStrings(listOfStrings)
-            console.log(`\nThe input contains ${nNiceStrings} nice strings.\n`);
+            console.log(`\nThe input contains ${nNiceStrings} nice strings (arbitrary rules).\n`);
         })
     })
 
@@ -116,7 +116,7 @@ describe('Santa', () => {
 
         it('should count strings in input', () => {
             let nNiceStrings = newSanta.countNiceStrings(listOfStrings)
-            console.log(`\nThe input contains ${nNiceStrings} nice strings.\n`);
+            console.log(`\nThe input contains ${nNiceStrings} nice strings (Part 2).\n`);
         })
     })
 })
