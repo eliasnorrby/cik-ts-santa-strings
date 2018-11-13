@@ -23,7 +23,7 @@ describe('CriterionDoublePair', () => {
     })
 
     it('should return false for a simple bad string', () => {
-        expect(c.check("aaa")).toBeTruthy();
+        expect(c.check("aaa")).toBeFalsy();
     })
 
     ns.forEach(s => {
