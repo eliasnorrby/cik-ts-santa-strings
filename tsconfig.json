@@ -1,8 +1,9 @@
 {
-    "compilerOptions": {
-      "lib": [
-         "dom",
-         "es7"
-      ]
-    }
+  "compilerOptions": {
+    "lib": [
+        "dom",
+        "es7"
+    ],
+    "sourceMap": true,
   }
+}

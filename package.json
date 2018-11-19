@@ -11,13 +11,23 @@
     "test": "test"
   },
   "scripts": {
-    "test": "ts-node node_modules/jasmine/bin/jasmine \"test/**/*Test.ts\""
+    "test": "nyc ts-node node_modules/jasmine/bin/jasmine \"test/**/*Test.ts\"",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
+  },
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".tsx"
+    ]
   },
   "author": "eliasnorrby",
   "license": "ISC",
   "devDependencies": {
     "@types/jasmine": "^2.8.9",
+    "codecov": "^3.1.0",
     "jasmine": "^3.3.0",
+    "nyc": "^13.1.0",
+    "source-map-support": "^0.5.9",
     "ts-node": "^7.0.1"
   },
   "dependencies": {
