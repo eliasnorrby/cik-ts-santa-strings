@@ -3,6 +3,7 @@
     "lib": [
         "dom",
         "es7"
-    ]
+    ],
+    "sourceMap": true,
   }
 }
